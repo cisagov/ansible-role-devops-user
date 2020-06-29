@@ -1,0 +1,11 @@
+---
+- name: Prepare
+  hosts: all
+  tasks:
+    # The Amazon Linux 2 Docker image does not have the groupmod
+    # utility installed.
+    - name: Install shadow-utils (Amazon)
+      package:
+        name:
+          - shadow-utils
+      when: ansible_distribution == 'Amazon'
