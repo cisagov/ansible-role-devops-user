@@ -3,6 +3,10 @@ galaxy_info:
   author: Shane Frasier
   description: Create the devops user, which can join the host to the IPA domain.
   company: CISA Cyber Assessments
+  galaxy_tags:
+    - ipa
+    - freeipa
+    - sudo
   license: CC0
   min_ansible_version: 2.0
   platforms:
@@ -24,9 +28,6 @@ galaxy_info:
       versions:
         - bionic
         - xenial
-  galaxy_tags:
-    - ipa
-    - freeipa
-    - sudo
+  role_name: devops_user
 
 dependencies: []
