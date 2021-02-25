@@ -1,11 +1,11 @@
 ---
 - name: Create devops user
-  user:
+  ansible.builtin.user:
     name: devops
     shell: /bin/bash
 
 - name: Allow devops user passwordless sudo for any command
-  copy:
+  ansible.builtin.copy:
     dest: /etc/sudoers.d/devops
     mode: 0400
     content: |
