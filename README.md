@@ -1,8 +1,7 @@
 # ansible-role-devops-user #
 
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-devops-user/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-devops-user/actions)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/cisagov/ansible-role-devops-user.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-devops-user/alerts/)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-devops-user.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-devops-user/context:python)
+[![CodeQL](https://github.com/cisagov/ansible-role-devops-user/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-devops-user/actions/workflows/codeql-analysis.yml)
 
 This Ansible role creates the `devops` user, which is a user that
 developers can use to ssh into a machine before it has been joined to
@@ -35,8 +34,10 @@ Here's how to use it in a playbook:
 - hosts: all
   become: yes
   become_method: sudo
-  roles:
-    - devops
+  tasks:
+    - name: Create devops user
+      ansible.builtin.include_role:
+        name: devops_user
 ```
 
 ## Contributing ##
