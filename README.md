@@ -37,7 +37,7 @@ Here's how to use it in a playbook:
   tasks:
     - name: Create devops user
       ansible.builtin.include_role:
-        name: devops
+        name: devops_user
 ```
 
 ## Contributing ##
