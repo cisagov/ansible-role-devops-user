@@ -7,7 +7,7 @@
 - name: Allow devops user passwordless sudo for any command
   ansible.builtin.copy:
     dest: /etc/sudoers.d/devops
-    mode: 0400
+    mode: u=r,g=,o=
     content: |
         devops ALL=(ALL) NOPASSWD: ALL
     validate: 'visudo -scf %s'
