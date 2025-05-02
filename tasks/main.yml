@@ -7,7 +7,12 @@
 - name: Allow devops user passwordless sudo for any command
   ansible.builtin.copy:
     dest: /etc/sudoers.d/devops
-    mode: 0400
+    mode: u=r,g=,o=
     content: |
         devops ALL=(ALL) NOPASSWD: ALL
+    # yamllint/ansible-lint complain that this string is quoted, but
+    # we want to ensure that the percent character is not interpreted
+    # by YAML as a special character.
+    #
+    # yamllint disable-line rule:quoted-strings
     validate: 'visudo -scf %s'
