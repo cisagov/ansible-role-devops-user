@@ -1,6 +1,7 @@
 # ansible-role-devops-user #
 
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-devops-user/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-devops-user/actions)
+[![License](https://img.shields.io/github/license/cisagov/ansible-role-devops-user)](https://spdx.org/licenses/)
 [![CodeQL](https://github.com/cisagov/ansible-role-devops-user/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-devops-user/actions/workflows/codeql-analysis.yml)
 
 This Ansible role creates the `devops` user, which is a user that
